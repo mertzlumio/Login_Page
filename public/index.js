@@ -17,7 +17,7 @@ function login() {
         console.log("Response from server:", xhr.responseText);
         window.location.href = "dashboard.html";
       } else {
-        alert("Invalid Creditionals");
+       document.getElementById('error').value='Invalid Creditionals';
       }
     };
     xhr.send(JSON.stringify({ username: username, password: password }));
