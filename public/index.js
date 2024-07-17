@@ -10,7 +10,7 @@ function login() {
 
   if (username != "" && password != "") {
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "/", true);
+    xhr.open("POST", "/login", true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhr.onload = function () {
       if (xhr.status === 200) {

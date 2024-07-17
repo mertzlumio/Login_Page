@@ -9,14 +9,14 @@
 <body>
     <h2>Sign-up</h2>
     <form id="form1">
-      <label for="username">Create Username</label>
-      <input id="username" required/><br><br>
+      <label for="nusername">Create Username</label>
+      <input id="nusername" required/><br><br>
       <label for="npassword">Create Password</label>
       <input type="password" id="npassword" required/>
-      <span id="password-suggestion"></span><br><br>
-      <button id="b2" onclick="signup1()">Create Account</button>
+      <span id="error_msg" hidden>Invalid Username! Try Another.</span><br><br>
+      <button id="b2" onclick="p_signup1()">Create Account</button>
       <button type="submit" id="b1" onclick="login1()">Login</button>      
-      
+      <script src="singup.js"></script>
     </form>
 </body>
 </html>
