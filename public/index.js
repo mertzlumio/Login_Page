@@ -1,11 +1,11 @@
 let username;
 let password;
-
+let errorMsg;
 function login() {
   event.preventDefault();
   username = document.getElementById("username").value;
   password = document.getElementById("password").value;
-
+  errorMsg=document.getElementById("error");
   //console.log(username);
 
   if (username != "" && password != "") {
@@ -17,7 +17,8 @@ function login() {
         console.log("Response from server:", xhr.responseText);
         window.location.href = "dashboard.html";
       } else {
-       document.getElementById('error').value='Invalid Creditionals';
+       //document.getElementById('error').value='Invalid Creditionals';
+        errorMsg.hidden = !errorMsg.hidden;
       }
     };
     xhr.send(JSON.stringify({ username: username, password: password }));
