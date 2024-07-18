@@ -11,12 +11,16 @@ form {
 } 
 
  
-  #signup-form {
+  #login-form {
     width: 400px; 
     height: 400px;
+    width: 80%; /* Adjust width relative to the viewport */
+  max-width: 400px; 
     padding: 40px;
     border: 1px solid #0e0c0c; 
     border-radius: 5px;
     text-align: center;
     background-color: rgb(200, 154, 214);
   }
+  
+ 
