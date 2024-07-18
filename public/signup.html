@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <h2>Sign-up</h2>
     <form id="form1">
       <label for="nusername">Create Username</label>
-      <input id="nusername" required/><br><br>
+      <input id="nusername" required /><br /><br />
       <label for="npassword">Create Password</label>
-      <input type="password" id="npassword" required/>
-      <span id="error_msg" hidden>Invalid Username! Try Another.</span><br><br>
-      <button id="b2" onclick="p_signup1()">Create Account</button>
-      <button type="submit" id="b1" onclick="login1()">Login</button>      
+      <input type="password" id="npassword" required /><br /><br />
+      <span id="error_msg" hidden>Username already taken! Try Another.</span
+      ><br /><br />
+      <button id="b2" onclick="p_signup()">Create Account</button>
+      <button type="submit" id="b1" onclick="login1()">Login</button>
       <script src="singup.js"></script>
+      <script src="index.js"></script>
     </form>
-</body>
+  </body>
 </html>

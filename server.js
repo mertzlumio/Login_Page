@@ -14,19 +14,16 @@ app.use(express.json());
 const static_path = path.join(__dirname, "public");
 app.use(express.static(static_path));
 
-
-
 let db;
 let collection;
 
-async function initialize(){
+async function initialize() {
   try {
     await client.connect();
     console.log("Connected successfully to MongoDB");
-  
+
     db = client.db("user_data");
     collection = db.collection("user_credentials");
-
   } catch (err) {
     console.error("Error connecting to MongoDB or inserting document:", err);
     res.status(500).send("Internal Server Error");
@@ -37,44 +34,43 @@ async function initialize(){
 
 initialize();
 
-app.post('/login', async (req, res) => {
+app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-console.log({username, password});
+  //console.log({ username, password });
   try {
-    const user = await collection.findOne({ username });
-console.log(user);
-    if (user && await compare(password, user.password)) {
-      res.status(200).send('Login Successful');
+    const user = await collection.findOne({ name: username });
+    //console.log(user);
+    if (user && password == user.pass) {
+      res.status(200).send("Login Successful");
     } else {
       res.sendStatus(401);
     }
   } catch (err) {
-    console.error('Error during login:', err);
-    res.status(500).send('Internal Server Error');
+    console.error("Error during login:", err);
+    res.status(500).send("Internal Server Error");
   }
 });
 
 app.post("/signup", async (req, res) => {
   const { n_username, n_password } = req.body;
-
+  //console.log(n_username);
   try {
-    const existingUser = await collection.findOne({ username: n_username });
+    const existingUser = await collection.findOne({ name: n_username });
 
     if (existingUser) {
-      return res.status(400).send('Username already taken');
+      console.log(existingUser);
+      res.status(400).send("Username already taken");
+    } else {
+      await collection.insertOne({
+        name: n_username,
+        pass: n_password,
+      });
+
+      res.status(201).send("User created successfully");
     }
-
-
-    await collection.insertOne({
-      username: n_username,
-      password: n_password,
-      created_at: new Date()
-    });
-
-    res.status(201).send('User created successfully');
   } catch (err) {
-    console.error('Error during signup:', err);
-    res.status(500).send('Internal Server Error');
+    console.error("Error during signup:", err);
+    res.status(500).send("Internal Server Error");
   }
 });
 
