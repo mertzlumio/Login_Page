@@ -53,3 +53,8 @@ document.getElementById("username").addEventListener("input", function () {
     document.getElementById("password").value = "";
   }
 });
+
+function logout()
+{
+  window.location.href = "index.html";
+}
