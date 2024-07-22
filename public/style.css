@@ -1,22 +1,55 @@
 body {
-    text-align: center;
-    background-color: rgb(184, 120, 243);
+  text-align: center;
+  background-color: rgb(184, 120, 243);
+}
+* {
+  box-sizing: border-box;
 }
 form {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
 
-    left      : 50%;
-    top       : 50%;
-    position  : absolute;
-    transform : translate(-50%, -50%);
-} 
-
- 
-  #signup-form {
-    width: 400px; 
+.form {
+  /* width: 400px; 
     height: 400px;
-    padding: 40px;
-    border: 1px solid #0e0c0c; 
-    border-radius: 5px;
-    text-align: center;
-    background-color: rgb(200, 154, 214);
+    width: 80%;  */
+  /* max-width: 400px; */
+  padding: 20px;
+  border: 1px solid #0e0c0c;
+  border-radius: 5px;
+  /* text-align: center; */
+  background-color: rgb(200, 154, 214);
+}
+
+.col25 {
+  float: left;
+  width: 30%;
+}
+
+.col50 {
+  float: left;
+  width: 50%;
+}
+
+.col75 {
+  float: left;
+  width: 70%;
+}
+
+/* .row::after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+@media screen and (max-width: 600px) {
+  .col25,
+  .col50,
+  .col75 {
+    width: 100%;
+    margin-top: 0;
   }
+}

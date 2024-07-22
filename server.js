@@ -25,7 +25,7 @@ async function initialize() {
     db = client.db("user_data");
     collection = db.collection("user_credentials");
   } catch (err) {
-    console.error("Error connecting to MongoDB or inserting document:", err);
+    console.error("Error connecting to MongoDB:", err);
     res.status(500).send("Internal Server Error");
   } finally {
     //await client.close();

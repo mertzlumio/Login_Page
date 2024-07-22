@@ -7,16 +7,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form id="signup-form">
+    <form id="signup-form" class="form">
       <h2>Sign-up</h2>
-      <label for="nusername">Create Username</label>
-      <input id="nusername" required /><br /><br />
-      <label for="npassword">Create Password</label>
-      <input type="password" id="npassword" required /><br /><br />
+      <div class="row">
+        <div class="col25"><label for="nusername">Username</label></div>
+        <div class="col75"><input id="nusername" required /><br /><br /></div>
+      </div>
+      <div class="row">
+        <div class="col25"><label for="npassword">Password</label></div>
+        <div class="col75">
+          <input type="password" id="npassword" required /><br /><br />
+        </div>
+      </div>
+
       <span id="error_msg" hidden>Username already taken! Try Another.</span
       ><br /><br />
-      <button id="b2" onclick="p_signup()">Create Account</button>
-      <button type="submit" id="b1" onclick="login1()">Login</button>
+      <div class="row">
+        <div class="col50">
+          <button id="b2" onclick="p_signup()">Create Account</button
+          ><br /><br />
+        </div>
+        <div class="col50">
+          <!-- <label for="b1">Already have an account? Login here</label> -->
+          <button type="submit" id="b1" onclick="login1()">Login</button>
+        </div>
+      </div>
+
       <script src="singup.js"></script>
       <script src="index.js"></script>
     </form>

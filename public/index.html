@@ -4,22 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
-    <form id="login-form">
-      <h2>Sign-in</h2>
-      <label for="username">Username</label>
-      <input id="username" required/><br><br>
-      <label for="password">Password</label>
-      <input type="password" id="password" required/><br><br>
-      <span id="error" hidden>Invalid Credentials! Try Again.</span><br><br>
-      <label for="checkbox1">Remeber me</label>
-      <input type="checkbox" id="checkbox1"/><br><br>
-      <button type="submit" id="b1" onclick="login()">Login</button>      
-      <button id="b2" onclick="signup()">Sign up</button>
-    </form>
+    <div class="container">
+      <form id="login-form" class="form">
+        <h2>Sign-in</h2>
+        <div class="row">
+          <div class="col25"><label for="username">Username</label></div>
+          <div class="col75"><input id="username" required /><br /><br /></div>
+        </div>
+        <div class="row">
+          <div class="col25"><label for="password">Password</label></div>
+          <div class="col75">
+            <input type="password" id="password" required /><br /><br />
+          </div>
+        </div>
+
+        <span id="error" hidden>Invalid Credentials! Try Again.</span
+        ><br /><br />
+        <label for="checkbox1">Remeber me</label>
+        <input type="checkbox" id="checkbox1" /><br /><br />
+        <div class="row">
+          <div class="col50">
+            <button type="submit" id="b1" onclick="login()">Login</button
+            ><br /><br />
+          </div>
+          <div class="col50">
+            <!-- <label for="b2">New user? Click here to sign-up</label> -->
+            <button id="b2" onclick="signup()">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
